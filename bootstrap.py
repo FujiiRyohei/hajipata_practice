@@ -32,13 +32,16 @@ plt.subplots_adjust(hspace=0.4)
 ax_pop.set_title("Histgram of population")
 y,x,_ = ax_pop.hist(population, bins=100, range=(0,10))
 ax_pop.axvline(population_avg, color="r")
-ax_pop.text(population_avg*1.02, y.max()*0.95, "Average= {0}".format(round(population_avg,2)))
+ax_pop.text(
+        population_avg*1.02, y.max()*0.95,
+        "Average= {0}".format(round(population_avg,2)))
 # 各ブートストラップサンプル内におけるの平均のヒストグラム
 ax_bs.set_title("Histgram of average of Bootstrap sample")
 y,x,_ = ax_bs.hist(bs_avgs, bins=50)
 ax_bs.axvline(np.average(bs_avgs), color="r")
 ax_bs.text(
-        np.average(bs_avgs)*1.02, y.max()*0.95, 
-        "μ = {0}, σ= {1}".format(round(np.average(bs_avgs),2), round(np.std(bs_avgs),2)))
+        np.average(bs_avgs)*1.02, y.max()*0.95,
+        "μ = {0}, σ= {1}"
+        .format(round(np.average(bs_avgs),2), round(np.std(bs_avgs),2)))
 plt.show()
 
