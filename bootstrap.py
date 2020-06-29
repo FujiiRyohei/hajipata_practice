@@ -41,7 +41,7 @@ y,x,_ = ax_bs.hist(bs_avgs, bins=50)
 ax_bs.axvline(np.average(bs_avgs), color="r")
 ax_bs.text(
         np.average(bs_avgs)*1.02, y.max()*0.95,
-        "μ = {0}, σ= {1}"
+        "mu = {0}, sigma= {1}"
         .format(round(np.average(bs_avgs),2), round(np.std(bs_avgs),2)))
 plt.show()
 
